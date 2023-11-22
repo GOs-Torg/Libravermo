@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.sitebooks.librovermo.dao.DAOResponse;
 import com.sitebooks.librovermo.dao.DBDAO;
 import com.sitebooks.librovermo.dao.SendObject;
+import com.sitebooks.librovermo.models.primary.Author;
 import com.sitebooks.librovermo.models.primary.Language;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,8 +23,7 @@ public class MainController {
     private SendObject sendObjectTest(){
         Map<String, String> map = new HashMap<>();
         map.put("name", "id = '22'");
-        SendObject so = new SendObject(new Language(1,"lololo"),"Language", map);
-        Logger.getAnonymousLogger().info(so.getSendClass());
+        SendObject so = new SendObject(new Author(1l, "Говард","Лавкрафт","Филипс","Lovecraft","10.10.1900","Крутой цел"),"Language", map);
         return so;
     }
     @GetMapping("/getFromDB")

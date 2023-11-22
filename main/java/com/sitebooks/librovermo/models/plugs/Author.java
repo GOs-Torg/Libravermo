@@ -1,25 +1,14 @@
-package com.sitebooks.librovermo.models.primary;
+package com.sitebooks.librovermo.models.plugs;
 
-import jakarta.persistence.*;
 
-@Entity
-@Table(name = "Author")
 public class Author {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id_Author;
 
-    @Column(name = "Author_Name", nullable = false)
     private String author_Name;
-    @Column(name = "Author_Second_Name", nullable = false)
     private String author_Second_Name;
-    @Column(name = "Author_Middle_Name", nullable = false)
     private String author_Middle_Name;
-    @Column(name = "Author_Alias", nullable = false, unique = true)
     private String author_Alias;
-    @Column(name = "Author_Date", nullable = false, length = 10)
     private String author_Date;
-    @Column(name = "Author_Description", nullable = false, length = 600)
     private String author_Description;
 
     public Author(){}

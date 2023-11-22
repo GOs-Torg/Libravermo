@@ -1,33 +1,20 @@
-package com.sitebooks.librovermo.models.primary;
+package com.sitebooks.librovermo.models.plugs;
 
-import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Pattern;
 
-@Entity
-@Table(name = "Client")
 public class Client {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id_Client;
-    @Column(name = "Client_Surname", nullable = false)
     private String client_Surname;
-    @Column(name = "Client_Name", nullable = false)
     private String client_Name;
-    @Column(name = "Client_Description", nullable = false)
     private String client_Description;
-    @Column(name = "Client_Login", nullable = false, unique = true)
     @Pattern(regexp = "^[a-zA-Z0-9]{8,24}$")
     private String client_Login;
-    @Column(name = "Client_Password", nullable = false, unique = true)
     @Pattern(regexp = "^[a-zA-Z0-9]{6,32}$", message = "Must be at least 6 symbols and contains at least 1 number")
     private String client_Password;
-    @Column(name = "Client_Phone_Number", nullable = false, unique = true)
     private String client_Phone_Number;
-    @Column(name = "Client_Email", nullable = false, unique = true)
     @Email(message = "Email must be valid")
     private String client_Email;
-    @Column(name = "Client_Nickname", nullable = false, unique = true)
     @Pattern(regexp = "^[a-zA-Z0-9]{4,24}$")
     private String client_Nickname;
 

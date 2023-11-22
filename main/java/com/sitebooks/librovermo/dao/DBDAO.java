@@ -10,7 +10,7 @@ public class DBDAO {
     private static final String user = "root";
     private static final String password = "";
     public static Statement state;
-    public static String rootClassPathName = "com.sitebooks.librovermo.models.";
+    public static String rootClassPathName = "com.sitebooks.librovermo.models.plugs.";
 
     public Connection getConnections(){
         try {
